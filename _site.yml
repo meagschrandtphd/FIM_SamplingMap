@@ -1,0 +1,7 @@
+name: "FIM Sampling"
+navbar:
+  title: "FIM Sampling Sites"
+  left:
+    - text: "June 2021"
+      href: index.html
+output_dir: "."
