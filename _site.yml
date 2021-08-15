@@ -1,7 +1,11 @@
-name: "FIM Sampling"
+name: "FIM"
 navbar:
   title: "FIM Sampling Sites"
   left:
-    - text: "Tampa Bay"
+    - text: "Home"
       href: index.html
+    - text: "Tampa Bay"
+      href: TB.html
+    - text: "Sarasota Bay"
+      href: SB.html
 output_dir: "."
