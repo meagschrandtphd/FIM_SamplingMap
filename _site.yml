@@ -2,6 +2,6 @@ name: "FIM Sampling"
 navbar:
   title: "FIM Sampling Sites"
   left:
-    - text: "August 2021"
+    - text: "Tampa Bay"
       href: index.html
 output_dir: "."
