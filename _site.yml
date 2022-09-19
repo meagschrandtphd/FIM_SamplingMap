@@ -8,4 +8,9 @@ navbar:
       href: TB.html
     - text: "Sarasota Bay"
       href: SB.html
+    - text: "Everglades"
+      href: EV.html
+    - text: "Florida Bay"
+      href: FB.html
+      
 output_dir: "."
