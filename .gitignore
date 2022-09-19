@@ -9,6 +9,10 @@ tbgrid.sbx
 tbgrid.shp
 tbgrid.shx
 index.Rmd
+TB.Rmd
+SB.Rmd
+EV.Rmd
+FB.Rmd
 SB_2021_08_SelectedStations.csv
 TB_2021_06_SelectedStations.csv
 TB_2021_07_SelectedStations.csv
@@ -20,3 +24,12 @@ tbgrid_PolygonToLine.sbx
 tbgrid_PolygonToLine.shp
 tbgrid_PolygonToLine.shp.xml
 tbgrid_PolygonToLine.shx
+SB.cpg
+SB.dbf
+SB.prj
+SB.sbn
+SB.sbx
+SB.shp
+SB.shp.xml
+SB.shx
+SB.xml
