@@ -73,9 +73,9 @@ stations_sf <- stations %>%
   )
 
 
-# #Read in the shapefile of EV basins
-EV_sf <- read_sf(dsn = ".", layer = "basinsv2polygon") %>%
-  select(BASIN, geometry) %>%
+# #Read in the shapefile of EV gridss
+EV_sf <- read_sf(dsn = ".", layer = "EVM_grid_universe_2_8_22") %>%
+  select(GRID, REGION, geometry) %>%
   # mutate(Zone = case_when(is.na(ZONE) ~ ".",
   #                          TRUE ~ ZONE)) %>%
   # filter(Zone != ".") %>%
@@ -128,22 +128,23 @@ iMap <- stations2 %>%
   # for some reason, we have to use the 'as.numeric' version of the factor, I don't really know why
   addMarkers(lng = ~ Longitude, lat = ~ Latitude, icon = ~ map_icons[as.numeric(MapIcon)],
              label = ~ paste0(Station_ID),
-             # popup = ~ paste0("Station = ", Station_ID,
-             #                  #"<br>Latitude = ", Latitude,
-             #                  #"<br>Longitude = ", Longitude,
-             #                  "<br>Lat_DDM = ", paste0(Lat_deg, "° ", Lat_min),
-             #                  "<br>Long_DDM = ", paste0(Lon_deg, "° ", Lon_min),
-             #                  "<br>Gear_Project = ", Gear_Pr,
-             #                  "<br>Zone = ", Zone,
-             #                  "<br>Basin = ", Grid,
-             #                  "<br>Stratum = ", Stratum,
-             #                  "<br>TempTrip = ", temp_trip),
+             popup = ~ paste0("Station = ", Station_ID,
+                              #"<br>Latitude = ", Latitude,
+                              #"<br>Longitude = ", Longitude,
+                              "<br>Lat_DDM = ", paste0(Lat_deg, "° ", Lat_min),
+                              "<br>Long_DDM = ", paste0(Lon_deg, "° ", Lon_min),
+                              "<br>Gear_Project = ", Gear_Pr,
+                              #"<br>Zone = ", Zone,
+                              "<br>Grid = ", Grid,
+                              "<br>Stratum = ", Stratum,
+                              "<br>TempTrip = ", temp_trip),
              group = "Sites") %>%
   addPolygons(data = EV_sf,
               fill = F, weight = 1, color = "white",
-              #label = ~ paste0(GRID),
-              # popup = ~ paste0("GRID = ", GRID,
-              #                "<br>Zone = ", Zone),
+              label = ~ paste0(GRID),
+              popup = ~ paste0("GRID = ", GRID,
+                             # "<br>Zone = ", Zone,
+                             "<br>Area = ", REGION),
               group = "Grids") %>%
   addLegend("bottomright", colors = c("orange", "red", "deepskyblue", "green"),
             labels = c("439_EV", "20_EV", "23_EV", "300_EV"),
